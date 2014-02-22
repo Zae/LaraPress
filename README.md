@@ -6,8 +6,6 @@ A set of models to use with Laravel's Eloquent to query a Wordpress database.
 
 These models fix a lot of quirks in the names of the columns in the tables to provide a more consistent experience.
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
-
 ### Read-Only
 
 I recommend only using these models for reading, the right columns are not automatically set when creating rows.
