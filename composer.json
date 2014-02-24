@@ -1,15 +1,21 @@
 {
 	"name": "Zae/LaraPress",
-	"description": "Wordpress",
+	"description": "A set of models to use with Laravel's Eloquent to query a Wordpress database.",
+	"keywords": ["laravel", "wordpress", "model", "database"],
 	"authors": [
 		{
 			"name": "Ezra Pool",
 			"email": "ezra@tsdme.nl"
 		}
 	],
+	"license": "MIT",
 	"require": {
 		"php": ">=5.3.0",
-		"illuminate/support": "4.1.*"
+		"illuminate/support": "4.1.*",
+		"illuminate/database": "4.1.*"
+	},
+	"suggest": {
+		"hampel/wordpress-auth-laravel": "WordPress Auth Driver for Laravel"
 	},
 	"autoload": {
 		"classmap": [
@@ -18,6 +24,5 @@
 		"psr-0": {
 			"Zae\\LaraPress\\": "src/"
 		}
-	},
-	"minimum-stability": "stable"
+	}
 }
