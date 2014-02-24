@@ -1,5 +1,5 @@
 {
-	"name": "Zae/LaraPress",
+	"name": "zae/lara-press",
 	"description": "A set of models to use with Laravel's Eloquent to query a Wordpress database.",
 	"keywords": ["laravel", "wordpress", "model", "database"],
 	"authors": [
