@@ -34,5 +34,16 @@ class Option extends \Eloquent {
 	public function getValueAttribute() {
 		return $this->attributes['option_value'];
 	}
+
+	/**
+	 * Scopes
+	 */
+
+	public function scopeAutoload($query) {
+		return $query->where('autoload', 'yes');
+	}
+	public function scopeNotAutoload($query) {
+		return $query->where('autoload', 'no');
+	}
 	
 }

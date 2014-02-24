@@ -112,5 +112,16 @@ class Comment extends \Eloquent {
 	public function getTypeAttribute() {
 		return $this->attributes['comment_type'];
 	}
+
+	/**
+	 * Scopes
+	 */
+
+	public function scopeApproved($query) {
+		return $query->where('comment_approved', true);
+	}
+	public function scopeNotApproved($query) {
+		return $query->where('comment_approved', false);
+	}
 	
 }

@@ -11,6 +11,17 @@ class Post extends \Eloquent {
 	protected $appends = ['id', 'title', 'name', 'content', 'excerpt', 'status', 'password', 'type', 'mime'];
 	protected $hidden = ['ID', 'post_title', 'post_name', 'post_content', 'post_excerpt', 'post_status', 'post_password', 'post_type', 'post_mime_type', 'post_author', 'post_parent'];
 
+
+	/**
+	 * Other constants
+	 */
+
+	const STATUS_PUBLISHED = 'publish';
+	const STATUS_DRAFT = 'draft';
+	const STATUS_INHERIT = 'inherit';
+	const STATUS_OPEN = 'open';
+	const STATUS_CLOSED = 'closed';
+
 	/**
 	 * Relations
 	 */
@@ -108,6 +119,31 @@ class Post extends \Eloquent {
 	}
 	public function getMimeAttribute() {
 		return $this->attributes['post_mime_type'];
+	}
+
+	/**
+	 * Scopes
+	 */
+
+	public function scopePublished($query) {
+		return $query->where('post_status', self::STATUS_PUBLISHED);
+	}
+	public function scopeDraft($query) {
+		return $query->where('post_status', self::STATUS_DRAFT);
+	}
+
+	public function scopeCommentsOpen($query) {
+		return $query->where('comment_status', self::STATUS_OPEN);
+	}
+	public function scopeCommentsClosed($query) {
+		return $query->where('comment_status', self::STATUS_CLOSED);
+	}
+
+	public function scopePingOpen($query) {
+		return $query->where('ping_status', self::STATUS_OPEN);
+	}
+	public function scopePingClosed($query) {
+		return $query->where('ping_status', self::STATUS_CLOSED);
 	}
 
 }
