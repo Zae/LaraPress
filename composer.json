@@ -10,18 +10,14 @@
 	],
 	"license": "MIT",
 	"require": {
-		"php": ">=5.3.0",
-		"illuminate/support": "~4.0|~5.0",
-		"illuminate/database": "~4.0|~5.0"
+		"php": ">=5.5",
+		"illuminate/database": "^4.2|^5.0|^6.0"
 	},
-	"suggest": {
-		"hampel/wordpress-auth-laravel": "WordPress Auth Driver for Laravel"
+	"require-dev": {
+		"roave/security-advisories": "dev-master"
 	},
 	"autoload": {
-		"classmap": [
-			"src/models"
-		],
-		"psr-0": {
+		"psr-4": {
 			"Zae\\LaraPress\\": "src/"
 		}
 	}
